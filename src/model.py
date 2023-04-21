@@ -16,7 +16,7 @@ class Backbone(nn.Module) :
 class CustomModel(nn.Module) :
     def __init__(self) :
         super(CustomModel,self).__init__()
-        self.backbone = Backbone("tf_efficientnetv2_b0",False)
+        self.backbone = Backbone("tf_efficientnetv2_s",False)
         self.pooling = nn.AdaptiveAvgPool2d(1)
         self.head = nn.Linear(self.backbone.out_features,1)
     def forward(self,x) :
